@@ -17,8 +17,8 @@
     lfs.enable = true;
 
     # TODO replace with your own name & email
-    userName = ruchirajkarki;
-    userEmail = ruchirajkarki@gmail.com;
+    userName = "ruchirajkarki";
+    userEmail = "ruchirajkarki@gmail.com";
 
     includes = [
       {
