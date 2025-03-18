@@ -70,6 +70,7 @@
       # "firefox"
       # "google-chrome"
       "visual-studio-code"
+      "utm"
 
       # IM & audio & remote desktop & meeting
       # "telegram"
