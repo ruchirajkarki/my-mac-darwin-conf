@@ -71,6 +71,7 @@
       # "google-chrome"
       "visual-studio-code"
       "utm"
+      "arc"
 
       # IM & audio & remote desktop & meeting
       # "telegram"
