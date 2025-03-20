@@ -18,6 +18,8 @@
     neovim
     git
     just # use Justfile to simplify nix-darwin's commands 
+    nodejs
+    direnv
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -69,9 +71,11 @@
     casks = [
       # "firefox"
       # "google-chrome"
+      "mac-mouse-fix"
       "visual-studio-code"
       "utm"
       "arc"
+      "sublime-text"
 
       # IM & audio & remote desktop & meeting
       # "telegram"
