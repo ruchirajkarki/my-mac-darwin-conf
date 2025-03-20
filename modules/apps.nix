@@ -20,6 +20,7 @@
     just # use Justfile to simplify nix-darwin's commands 
     nodejs
     direnv
+    vscode
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -64,6 +65,7 @@
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
       "aria2" # download tool
       "httpie" # http client
+      "mariadb"
     ];
 
     # `brew install --cask`
@@ -72,10 +74,11 @@
       # "firefox"
       # "google-chrome"
       "mac-mouse-fix"
-      "visual-studio-code"
+      # "visual-studio-code"
       "utm"
       "arc"
       "sublime-text"
+      "dbeaver-community"
 
       # IM & audio & remote desktop & meeting
       # "telegram"
