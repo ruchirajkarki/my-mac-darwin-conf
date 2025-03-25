@@ -19,8 +19,11 @@
     git
     just # use Justfile to simplify nix-darwin's commands 
     nodejs
+    nodejs_18
+    (yarn.override { nodejs = nodejs_18; })
     direnv
     vscode
+
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -71,7 +74,7 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      # "firefox"
+      "firefox"
       # "google-chrome"
       "mac-mouse-fix"
       # "visual-studio-code"
@@ -94,6 +97,9 @@
       # "insomnia" # REST client
       "postman"
       # "wireshark" # network analyzer
+
+
+      "soulseek"
     ];
   };
 }
