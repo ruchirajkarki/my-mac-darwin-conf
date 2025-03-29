@@ -17,7 +17,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
-    just # use Justfile to simplify nix-darwin's commands 
+    just # use Justfile to simplify nix-darwin's commands
+    rar
     nodejs
     nodejs_18
     (yarn.override { nodejs = nodejs_18; })
@@ -74,20 +75,22 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "firefox"
+      # "firefox"
       # "google-chrome"
       "mac-mouse-fix"
+      # "rar"
       # "visual-studio-code"
-      "utm"
+      # "utm"
+      "adguard"
       "arc"
       "sublime-text"
       "dbeaver-community"
-
       # IM & audio & remote desktop & meeting
       # "telegram"
       # "discord"
+      # "brainfm"
 
-      "anki"
+      # "anki"
       "iina" # video player
       "raycast" # (HotKey: alt/option + space)search, caculate and run scripts(with many plugins)
       "stats" # beautiful system monitor
@@ -95,7 +98,7 @@
 
       # Development
       # "insomnia" # REST client
-      "postman"
+      # "postman"
       # "wireshark" # network analyzer
 
 
