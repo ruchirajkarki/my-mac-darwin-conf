@@ -17,6 +17,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    lazygit
     just # use Justfile to simplify nix-darwin's commands
     rar
     nodejs
