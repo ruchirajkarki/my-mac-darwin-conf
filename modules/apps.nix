@@ -80,6 +80,7 @@
       # "google-chrome"
       "mac-mouse-fix"
       "docker"
+      "obsidian"
       # "rar"
       # "visual-studio-code"
       # "utm"
