@@ -15,15 +15,17 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    neovim
+    # neovim
     git
     lazygit
-    just # use Justfile to simplify nix-darwin's commands
-    rar
+    # just # use Justfile to simplify nix-darwin's commands
+    # rar
+    gh
     nodejs
     nodejs_18
     (yarn.override { nodejs = nodejs_18; })
-    direnv
+    pnpm
+    # direnv
     vscode
 
   ];
@@ -68,23 +70,28 @@
     brews = [
       "wget" # download tool
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
-      "aria2" # download tool
-      "httpie" # http client
+      # "aria2" # download tool
+      # "httpie" # http client
       # "mariadb"
+
+      # "cocoapods"
+      # "rbenv"
+      # "openjdk"
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
       # "firefox"
+      # "android-platform-tools"
       # "google-chrome"
-      "mac-mouse-fix"
+      # "mac-mouse-fix"
       "docker"
       "obsidian"
+      "xcodes"
       # "rar"
       # "visual-studio-code"
       # "utm"
-      "adguard"
       "arc"
       "sublime-text"
       "dbeaver-community"
@@ -103,7 +110,6 @@
       # "insomnia" # REST client
       # "postman"
       # "wireshark" # network analyzer
-
 
       "soulseek"
     ];
