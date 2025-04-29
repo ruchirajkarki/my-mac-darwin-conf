@@ -26,7 +26,7 @@
     (yarn.override { nodejs = nodejs_18; })
     pnpm
     # direnv
-    vscode
+    # vscode
 
   ];
   environment.variables.EDITOR = "nvim";
@@ -73,6 +73,8 @@
       # "aria2" # download tool
       # "httpie" # http client
       # "mariadb"
+      "php"
+      "composer"
 
       # "cocoapods"
       # "rbenv"
@@ -86,9 +88,13 @@
       # "android-platform-tools"
       # "google-chrome"
       # "mac-mouse-fix"
+      "visual-studio-code"
+      "reactotron"
+      # "ollama"
       "docker"
       "obsidian"
       "xcodes"
+      "postman"
       # "rar"
       # "visual-studio-code"
       # "utm"
