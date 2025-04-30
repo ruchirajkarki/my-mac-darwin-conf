@@ -28,6 +28,9 @@
     # direnv
     # vscode
 
+    # For Expo
+    nodePackages.eas-cli
+
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -62,7 +65,7 @@
     };
 
     taps = [
-      "homebrew/services"
+      # "homebrew/services"
     ];
 
     # `brew install`
@@ -78,7 +81,7 @@
 
       # "cocoapods"
       # "rbenv"
-      # "openjdk"
+      "openjdk"
     ];
 
     # `brew install --cask`
@@ -88,6 +91,7 @@
       # "android-platform-tools"
       # "google-chrome"
       # "mac-mouse-fix"
+      "android-studio"
       "visual-studio-code"
       "reactotron"
       # "ollama"
@@ -117,7 +121,7 @@
       # "postman"
       # "wireshark" # network analyzer
 
-      "soulseek"
+      # "soulseek"
     ];
   };
 }
