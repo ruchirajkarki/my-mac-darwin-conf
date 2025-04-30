@@ -2,8 +2,19 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    initExtra = ''
+     initExtra = ''
+      # General paths
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+
+      # Java (Homebrew OpenJDK)
+      export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+      export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+      # Android SDK
+      export ANDROID_HOME="$HOME/Library/Android/sdk"
+      export PATH="$PATH:$ANDROID_HOME/platform-tools"
+      export PATH="$PATH:$ANDROID_HOME/tools/bin"
+      export PATH="$PATH:$ANDROID_HOME/emulator"
     '';
   };
 
