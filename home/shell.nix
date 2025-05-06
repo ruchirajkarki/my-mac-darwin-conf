@@ -25,5 +25,8 @@
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+
+    red = "adb connect 192.168.1.111";
+    sam = "adb connect 192.168.1.112";
   };
 }

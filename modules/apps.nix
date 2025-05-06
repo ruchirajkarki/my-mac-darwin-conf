@@ -95,6 +95,7 @@
       "visual-studio-code"
       "reactotron"
       # "ollama"
+      "expo-orbit"
       "docker"
       "obsidian"
       "xcodes"
