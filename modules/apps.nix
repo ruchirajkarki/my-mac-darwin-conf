@@ -82,6 +82,7 @@
       # "cocoapods"
       # "rbenv"
       "openjdk"
+      "scrcpy"
     ];
 
     # `brew install --cask`
