@@ -28,5 +28,7 @@
 
     red = "adb connect 192.168.1.111";
     sam = "adb connect 192.168.1.112";
+    nab = "adb connect 192.168.1.113";
+    nir = "php artisan serve --host 0.0.0.0 --port 8000";
   };
 }

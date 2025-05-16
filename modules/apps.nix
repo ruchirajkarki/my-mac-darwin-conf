@@ -90,7 +90,8 @@
     casks = [
       # "firefox"
       # "android-platform-tools"
-      # "google-chrome"
+      "google-chrome"
+      # "cursor"
       # "mac-mouse-fix"
       "android-studio"
       "visual-studio-code"
@@ -122,7 +123,6 @@
       # "insomnia" # REST client
       # "postman"
       # "wireshark" # network analyzer
-
       # "soulseek"
     ];
   };
