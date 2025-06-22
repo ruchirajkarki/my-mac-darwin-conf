@@ -7,8 +7,8 @@
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
 
       # Java (Homebrew OpenJDK)
-      export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-      export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+      export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+      export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
       # Android SDK
       export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -26,7 +26,7 @@
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
 
-    red = "adb connect 192.168.1.111";
+    red = "adb connect 192.168.1.143";
     sam = "adb connect 192.168.1.112";
     nab = "adb connect 192.168.1.113";
     nir = "php artisan serve --host 0.0.0.0 --port 8000";

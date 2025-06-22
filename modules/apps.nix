@@ -78,10 +78,11 @@
       # "mariadb"
       "php"
       "composer"
+      "fastlane"
 
-      # "cocoapods"
+      "cocoapods"
       # "rbenv"
-      "openjdk"
+      "openjdk@21"
       "scrcpy"
     ];
 
