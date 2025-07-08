@@ -79,10 +79,10 @@
       # "aria2" # download tool
       # "httpie" # http client
       # "mariadb"
-      "php"
-      "go"
-      "composer"
-      "fastlane"
+      # "php"
+      # "composer"
+      # "go"
+      # "fastlane"
 
       "cocoapods"
       # "rbenv"
