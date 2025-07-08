@@ -31,6 +31,9 @@
     # For Expo
     nodePackages.eas-cli
 
+     # For NestJS
+    nodePackages."@nestjs/cli"
+
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -77,6 +80,7 @@
       # "httpie" # http client
       # "mariadb"
       "php"
+      "go"
       "composer"
       "fastlane"
 
