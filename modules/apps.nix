@@ -110,9 +110,9 @@
       # "rar"
       # "visual-studio-code"
       # "utm"
-      "arc"
-      "sublime-text"
-      "dbeaver-community"
+      # "arc"
+      # "sublime-text"
+      # "dbeaver-community"
       # IM & audio & remote desktop & meeting
       # "telegram"
       # "discord"
