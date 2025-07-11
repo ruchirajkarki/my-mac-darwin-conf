@@ -88,6 +88,8 @@
       # "rbenv"
       "openjdk@21"
       "scrcpy"
+      "xcodes"
+      "docker"
     ];
 
     # `brew install --cask`
@@ -103,9 +105,7 @@
       "reactotron"
       # "ollama"
       "expo-orbit"
-      "docker"
       "obsidian"
-      "xcodes"
       "postman"
       # "rar"
       # "visual-studio-code"

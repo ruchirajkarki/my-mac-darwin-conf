@@ -29,6 +29,8 @@
         show-recents = false;  # disable recent apps
         orientation = "right";  # position the dock to right side
         static-only = true; # Only show opened apps in Dock.
+        tilesize = 24;  # set dock icon size
+        magnification = true;  # enable dock icon magnification
 
         # customize Hot Corners(触发角, 鼠标移动到屏幕角落时触发的动作)
         wvous-tl-corner = 2;  # top-left - Mission Control
