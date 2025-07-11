@@ -88,13 +88,13 @@
       # "rbenv"
       "openjdk@21"
       "scrcpy"
-      "xcodes"
-      "docker"
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      "xcodes"
+      "docker"
       # "firefox"
       # "android-platform-tools"
       "google-chrome"
