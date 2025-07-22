@@ -33,7 +33,6 @@
 
      # For NestJS
     nodePackages."@nestjs/cli"
-
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -85,26 +84,26 @@
       # "fastlane"
 
       # "rbenv"
-      "openjdk@21"
-      "scrcpy"
-      "cocoapods" # CocoaPods CLI for iOS development
+      # "openjdk@21"
+      # "scrcpy"
+      # "cocoapods" # CocoaPods CLI for iOS development
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "xcodes"
+      # "xcodes"
       "docker"
-      # "firefox"
+      "firefox"
       # "android-platform-tools"
       "google-chrome"
       # "cursor"
       # "mac-mouse-fix"
       "android-studio"
       "visual-studio-code"
-      "reactotron"
+      # "reactotron"
       # "ollama"
-      "expo-orbit"
+      # "expo-orbit"
       "obsidian"
       "postman"
       # "rar"
