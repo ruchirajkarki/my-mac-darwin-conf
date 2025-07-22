@@ -84,10 +84,10 @@
       # "go"
       # "fastlane"
 
-      "cocoapods"
       # "rbenv"
       "openjdk@21"
       "scrcpy"
+      "cocoapods" # CocoaPods CLI for iOS development
     ];
 
     # `brew install --cask`
