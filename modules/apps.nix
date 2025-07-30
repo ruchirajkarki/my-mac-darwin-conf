@@ -22,8 +22,9 @@
     # rar
     gh
     nodejs
-    nodejs_18
-    (yarn.override { nodejs = nodejs_18; })
+    yarn
+    #nodejs_18
+    #(yarn.override { nodejs = nodejs_18; })
     pnpm
     # direnv
     # vscode
@@ -56,6 +57,7 @@
     # For details, see https://github.com/mas-cli/mas 
     masApps = {
       # TODO Feel free to add your favorite apps here.
+      "DevCleaner for Xcode" = 1388020431; # Xcode cache cleaner
 
       # Xcode = 497799835;
       # Wechat = 836500024;
@@ -93,7 +95,6 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       # "xcodes"
-      "docker"
       "firefox"
       # "android-platform-tools"
       "google-chrome"
