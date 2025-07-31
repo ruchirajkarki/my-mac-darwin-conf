@@ -96,6 +96,7 @@
     casks = [
       # "xcodes"
       "firefox"
+      "localsend"
       # "android-platform-tools"
       "google-chrome"
       # "cursor"
