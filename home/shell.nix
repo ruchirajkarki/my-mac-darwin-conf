@@ -30,6 +30,7 @@
     sam = "adb connect 192.168.1.112";
     nab = "adb connect 192.168.1.113";
     nir = "php artisan serve --host 0.0.0.0 --port 8000";
-    bot = "cd ~/Documents/IStem-lab/bot_frontend && code . && pnpm dev";
+    bot = "cd ~/Documents/istem/bot_frontend && code . && pnpm dev";
+    botb = "cd ~/Documents/istem/bot_frontend && code . && pnpm --filter bot dev";
   };
 }
