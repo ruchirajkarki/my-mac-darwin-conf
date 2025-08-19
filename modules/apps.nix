@@ -30,10 +30,10 @@
     # vscode
 
     # For Expo
-    nodePackages.eas-cli
+    # nodePackages.eas-cli
 
      # For NestJS
-    nodePackages."@nestjs/cli"
+    # nodePackages."@nestjs/cli"
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -101,7 +101,7 @@
       "google-chrome"
       # "cursor"
       # "mac-mouse-fix"
-      "android-studio"
+      # "android-studio"
       "visual-studio-code"
       # "reactotron"
       # "ollama"

@@ -174,7 +174,7 @@
   ];
 
   # Disbale because i use determinate
-  nix.enable = false;
+  nix.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kathmandu";
