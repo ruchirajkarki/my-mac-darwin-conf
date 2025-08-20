@@ -20,17 +20,8 @@
 
   home.shellAliases = {
     k = "kubectl";
-    cj = "pnpm install && pnpm dev";
-    ccj = "rm -rf node_modules pnpm-lock.yaml && pnpm install && pnpm dev";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-
-    red = "adb connect 192.168.1.143";
-    sam = "adb connect 192.168.1.112";
-    nab = "adb connect 192.168.1.113";
-    nir = "php artisan serve --host 0.0.0.0 --port 8000";
-    bot = "cd ~/Documents/istem/bot_frontend && code . && pnpm dev";
-    botb = "cd ~/Documents/istem/bot_frontend && code . && pnpm --filter bot dev";
   };
 }
