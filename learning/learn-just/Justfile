@@ -1,0 +1,13 @@
+default:
+  just --list
+
+hello:
+  echo "Hello from just!"
+build:
+  echo "Building..."
+
+test:
+  echo "Running tests..."
+
+greet name:
+  echo "Hello, {{name}}!"
