@@ -26,7 +26,13 @@
     #nodejs_18
     #(yarn.override { nodejs = nodejs_18; })
     pnpm
-    # direnv
+    direnv
+    nix-direnv
+    jq
+    ripgrep
+    just
+    fzf
+    bat
     # vscode
 
     # For Expo
