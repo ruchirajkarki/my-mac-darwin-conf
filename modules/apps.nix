@@ -34,6 +34,7 @@
 
      # For NestJS
     # nodePackages."@nestjs/cli"
+  turbo # Vercel TurboRepo CLI
   ];
   environment.variables.EDITOR = "nvim";
 
