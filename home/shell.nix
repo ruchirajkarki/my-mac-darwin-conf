@@ -22,6 +22,9 @@
     k = "kubectl";
     t = "turbo";
     dd = "cd ~/nix-conf && sudo make deploy";
+    
+    code_bot = "cd ~/work/istem/dynamic/bot_frontend";
+    code_bid = "cd ~/work/istem/dynamic/bid-my-trip";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
