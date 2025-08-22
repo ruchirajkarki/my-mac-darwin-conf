@@ -36,7 +36,7 @@
     # vscode
 
     # For Expo
-    # nodePackages.eas-cli
+    nodePackages.eas-cli
 
      # For NestJS
     # nodePackages."@nestjs/cli"
@@ -93,24 +93,24 @@
       # "fastlane"
 
       # "rbenv"
-      # "openjdk@21"
+      "openjdk@21"
       # "scrcpy"
-      # "cocoapods" # CocoaPods CLI for iOS development
+      "cocoapods" # CocoaPods CLI for iOS development
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      # "xcodes"
+      "xcodes"
       "firefox"
       "localsend"
-      # "android-platform-tools"
+      "android-platform-tools"
       "google-chrome"
       # "cursor"
       # "mac-mouse-fix"
-      # "android-studio"
+      "android-studio"
       "visual-studio-code"
-      # "reactotron"
+      "reactotron"
       # "ollama"
       # "expo-orbit"
       "obsidian"
