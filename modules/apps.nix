@@ -103,6 +103,7 @@
     casks = [
       "xcodes"
       "firefox"
+      "claude-code"
       "localsend"
       "android-platform-tools"
       "google-chrome"
