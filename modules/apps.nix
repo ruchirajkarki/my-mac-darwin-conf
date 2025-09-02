@@ -107,6 +107,7 @@
       "localsend"
       "android-platform-tools"
       "google-chrome"
+      "ghostty"
       # "cursor"
       # "mac-mouse-fix"
       "android-studio"
