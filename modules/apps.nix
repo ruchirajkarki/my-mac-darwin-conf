@@ -41,6 +41,7 @@
      # For NestJS
     # nodePackages."@nestjs/cli"
   turbo # Vercel TurboRepo CLI
+  tmux # terminal multiplexer for managing terminal sessions
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -91,7 +92,8 @@
       # "composer"
       # "go"
       # "fastlane"
-
+      "minikube"
+      "skaffold"
       # "rbenv"
       "openjdk@21"
       # "scrcpy"

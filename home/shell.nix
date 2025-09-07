@@ -26,6 +26,13 @@
     code_bot = "cd ~/work/istem/dynamic/bot_frontend && code . && turbo dev";
     code_bid = "cd ~/work/istem/dynamic/bid-my-trip && code . && turbo dev";
     code_land = "cd ~/work/istem/dynamic/landscape_frontend && code . && pnpm dev";
+    bb = ''
+      tmux new-session \; \
+      send-keys "cd ~/landscape/landscape-monorepo/src/identityservice && docker compose down && docker compose up" C-m \; \
+      split-window -v \; \
+      send-keys "cd ~/landscape/landscape-monorepo/src/leadservice && docker compose down && docker compose up" C-m \; \
+      attach
+    '';
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";

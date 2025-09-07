@@ -27,12 +27,20 @@
     zstd
     caddy
     gnupg
-
     # productivity
     glow # markdown previewer in terminal
+    zoxide # fast directory jumper
+
+    # terminal multiplexer for managing terminal sessions
+    tmux
   ];
 
   programs = {
+    # zoxide: smarter cd command
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     # modern vim
     neovim = {
       enable = true;
@@ -66,6 +74,17 @@
     skim = {
       enable = true;
       enableBashIntegration = true;
+    };
+
+    # tmux configuration
+    tmux = {
+      enable = true;
+      # Basic tmux configuration for developers
+      extraConfig = ''
+        set -g mouse on
+        bind r source-file ~/.tmux.conf \; display-message "Config reloaded!"
+        setw -g mode-keys vi
+      '';
     };
   };
 }
