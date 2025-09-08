@@ -110,6 +110,7 @@
       "android-platform-tools"
       "google-chrome"
       "ghostty"
+      "cloudflare-warp"
       # "cursor"
       # "mac-mouse-fix"
       "android-studio"
