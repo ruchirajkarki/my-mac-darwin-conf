@@ -50,11 +50,10 @@
     home-manager,
     ...
   }: let
-    # TODO replace with your own username, email, system, and hostname
-    username = "__USERNAME__";
-    useremail = "__USEREMAIL__";
-    system = "__SYSTEM__"; # aarch64-darwin or x86_64-darwin
-    hostname = "__HOSTNAME__";
+    username = "ruchirajkarki";
+    useremail = "ruchirajkarki@icloud.com";
+    system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
+    hostname = "Ruchis-MacBook-Air";
 
     specialArgs =
       inputs
