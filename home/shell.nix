@@ -22,6 +22,8 @@
     k = "kubectl";
     t = "turbo";
     dd = "cd ~/nix-conf && sudo make deploy";
+    pd = "pnpm dev";
+    pi = "pnpm install";
     
     code_bot = "cd ~/work/istem/dynamic/bot_frontend && code . && turbo dev";
     code_bid = "cd ~/work/istem/dynamic/bid-my-trip && code . && turbo dev";
