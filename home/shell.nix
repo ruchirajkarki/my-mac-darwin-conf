@@ -21,7 +21,7 @@
   home.shellAliases = {
     k = "kubectl";
     t = "turbo";
-    dd = "cd ~/nix-conf && sudo make deploy";
+    dd = "cd ~/nix-conf && make deploy";
     pd = "pnpm dev";
     pi = "pnpm install";
     
