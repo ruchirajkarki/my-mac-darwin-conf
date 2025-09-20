@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -22,6 +22,40 @@
         "helm"
       ];
     };
+    # Prefer XDG layout for Zsh configs
+    dotDir = ".config/zsh";
+
+    # Improve history behavior
+    history = {
+      size = 10000;
+      save = 10000;
+      path = "$HOME/.local/state/zsh/history";
+      share = true;
+      expireDuplicatesFirst = true;
+    };
+
+    # Helpful, low-risk Zsh options
+    setOptions = [
+      "AUTO_CD" # cd by typing directory name
+      "INTERACTIVE_COMMENTS" # allow # comments in interactive shell
+      "EXTENDED_GLOB" # richer globbing
+      "HIST_IGNORE_DUPS" # ignore consecutive duplicates
+      "HIST_VERIFY" # edit before executing from history
+    ];
+
+    # Lightweight plugins (non-OMZ)
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+      {
+        name = "zsh-autopair";
+        src = pkgs.zsh-autopair;
+        file = "share/zsh-autopair/autopair.zsh";
+      }
+    ];
     initContent = ''
       # General paths
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"

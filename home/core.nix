@@ -40,6 +40,17 @@
   ];
 
   programs = {
+    # direnv + nix-direnv: auto-load .envrc and Nix shells
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
+    # nix-index: find which package provides a command (with Zsh integration)
+    nix-index = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     # zoxide: smarter cd command
     zoxide = {
       enable = true;
