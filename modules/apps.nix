@@ -15,7 +15,7 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    # neovim
+    neovim
     git
     lazygit
     # just # use Justfile to simplify nix-darwin's commands
@@ -40,8 +40,11 @@
 
      # For NestJS
     # nodePackages."@nestjs/cli"
-  turbo # Vercel TurboRepo CLI
-  tmux # terminal multiplexer for managing terminal sessions
+    turbo # Vercel TurboRepo CLI
+    tmux # terminal multiplexer for managing terminal sessions
+    postman
+    android-tools
+    codex
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -99,6 +102,7 @@
       "openjdk@21"
       # "scrcpy"
       "cocoapods" # CocoaPods CLI for iOS development
+      "anchordotdev/tap/anchor"
     ];
 
     # `brew install --cask`
@@ -108,7 +112,6 @@
       "firefox"
       # "claude-code"
       "localsend"
-      "android-platform-tools"
       "google-chrome"
       "ghostty"
       # "cloudflare-warp"
@@ -120,7 +123,6 @@
       # "ollama"
       # "expo-orbit"
       "obsidian"
-      "postman"
       # "rar"
       # "visual-studio-code"
       # "utm"

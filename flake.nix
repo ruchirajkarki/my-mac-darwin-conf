@@ -37,6 +37,12 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+
+    # Kickstart.nvim: use your fork
+    kickstart-nvim = {
+      url = "github:ruchiistem/kickstart.nvim";
+      flake = false; # fetch as a plain source tree
+    };
   };
 
   # The `outputs` function will return all the build results of the flake.

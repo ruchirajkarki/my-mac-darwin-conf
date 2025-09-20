@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, kickstart-nvim, ... }: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -85,6 +85,15 @@
         bind r source-file ~/.tmux.conf \; display-message "Config reloaded!"
         setw -g mode-keys vi
       '';
+    };
+  };
+
+  # Link your fork of kickstart.nvim as the Neovim config
+  xdg = {
+    enable = true;
+    configFile."nvim" = {
+      source = kickstart-nvim;
+      recursive = true;
     };
   };
 }

@@ -41,6 +41,22 @@
         "type": "github"
       }
     },
+    "kickstart-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758400484,
+        "narHash": "sha256-2EDR5G6so60LF7e0h6oH/L9EyusBLJLEa+i7nokxybU=",
+        "owner": "ruchiistem",
+        "repo": "kickstart.nvim",
+        "rev": "fcf26277cf894aa93289ed4a3554fec0b2c0d417",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ruchiistem",
+        "repo": "kickstart.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 0,
@@ -73,6 +89,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "kickstart-nvim": "kickstart-nvim",
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin"
       }
