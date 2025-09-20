@@ -66,7 +66,7 @@
     masApps = {
       # TODO Feel free to add your favorite apps here.
       "DevCleaner for Xcode" = 1388020431; # Xcode cache cleaner
-      "uBlock origin lite" = 6745342698
+      "uBlock origin lite" = 6745342698;
 
       # Xcode = 497799835;
       # Wechat = 836500024;
