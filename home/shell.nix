@@ -2,7 +2,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-     initContent = ''
+    autosuggestions.enable = true;
+    initContent = ''
       # General paths
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
 
@@ -23,7 +24,7 @@
     dd = "cd ~/nix-conf && make deploy";
     pd = "pnpm dev";
     pi = "pnpm install";
-    
+
     code_bot = "cd ~/work/istem/dynamic/bot_frontend && code . && turbo dev";
     code_bid = "cd ~/work/istem/dynamic/bid-my-trip && code . && turbo dev";
     code_land = "cd ~/work/istem/dynamic/landscape_frontend && code . && pnpm dev";
