@@ -66,6 +66,7 @@
     masApps = {
       # TODO Feel free to add your favorite apps here.
       "DevCleaner for Xcode" = 1388020431; # Xcode cache cleaner
+      "uBlock origin lite" = 6745342698
 
       # Xcode = 497799835;
       # Wechat = 836500024;
@@ -112,7 +113,7 @@
       "ghostty"
       # "cloudflare-warp"
       # "cursor"
-      # "mac-mouse-fix"
+      "mac-mouse-fix"
       "android-studio"
       "visual-studio-code"
       # "reactotron"
