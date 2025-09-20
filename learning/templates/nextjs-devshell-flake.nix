@@ -17,7 +17,7 @@
             watchman
           ];
           shellHook = ''
-            export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+            export PNPM_HOME="''${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
             export PATH="$PNPM_HOME:$PATH"
             if command -v corepack >/dev/null 2>&1; then
               corepack enable --install-directory "$HOME/.local/bin" >/dev/null 2>&1 || true
@@ -28,4 +28,3 @@
       });
     };
 }
-

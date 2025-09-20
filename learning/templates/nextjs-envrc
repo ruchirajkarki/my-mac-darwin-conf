@@ -4,12 +4,9 @@
 # 1) Copy this file to your project root as `.envrc`
 # 2) Run `direnv allow` once in the project directory
 
-# Prefer Nix devShell if you have a flake
+# Prefer Nix devShell if you have a flake; fall back to plain Node
 # (uses `devShell`/`devShells.<name>` automatically)
-use flake
-
-# Fallback to a plain Node layout if no flake is present
-layout node
+use flake || layout node
 
 # Add local project binaries to the PATH (e.g., next, eslint, prettier)
 PATH_add node_modules/.bin
@@ -25,5 +22,4 @@ export NEXT_TELEMETRY_DISABLED=1
 export BROWSERSLIST_IGNORE_OLD_DATA=1
 
 # Load .env if present (without failing if it’s missing)
-dotenv_if_exists .env
-
+dotenv_if_exists .env.local
