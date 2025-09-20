@@ -1,4 +1,8 @@
-{ pkgs, kickstart-nvim, ... }: {
+{
+  pkgs,
+  kickstart-nvim,
+  ...
+}: {
   home.packages = with pkgs; [
     # archives
     zip
