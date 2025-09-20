@@ -37,6 +37,11 @@
 
     # terminal multiplexer for managing terminal sessions
     tmux
+
+    # Next.js dev helpers
+    watchman
+    nodePackages.eslint_d
+    mkcert
   ];
 
   programs = {

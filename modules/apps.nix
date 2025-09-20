@@ -104,6 +104,7 @@
       # "scrcpy"
       "cocoapods" # CocoaPods CLI for iOS development
       "anchordotdev/tap/anchor"
+      "nss"
     ];
 
     # `brew install --cask`
