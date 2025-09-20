@@ -45,6 +45,8 @@
     postman
     android-tools
     codex
+
+    fd
   ];
   environment.variables.EDITOR = "nvim";
 
