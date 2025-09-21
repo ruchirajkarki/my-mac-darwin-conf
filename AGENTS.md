@@ -1,38 +1,19 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `flake.nix`: Entry point for the Nix flake; sets `hostname`, `username`, formatter, and modules.
-- `modules/`: System-level nix-darwin config (`apps.nix`, `system.nix`, `host-users.nix`, `nix-core.nix`, optional `homebrew-mirror.nix`).
-- `home/`: Home Manager user config (`default.nix`, `shell.nix`, `git.nix`, `starship.nix`, `fzf-bat.nix`).
-- `rich-demo/`: A comprehensive example. Use for reference only; do not deploy as-is.
-- `learning/`: Examples and notes (direnv, just, etc.).
-- `Makefile`: Convenience `deploy` target.
+Keep `flake.nix` as the single entrypoint; update `hostname`, `username`, and shared module lists there. Place system modules in `modules/` (e.g., `apps.nix`, `system.nix`), user-facing Home Manager modules under `home/` (`default.nix`, `shell.nix`, `git.nix`). Refer to `rich-demo/` only for examples, and treat `learning/` as scratch space for experiments. Use the `Makefile` `deploy` target when you want a single command that builds and switches.
 
 ## Build, Test, and Development Commands
-- `make deploy`: Builds `.#darwinConfigurations.<hostname>.system` and switches via `darwin-rebuild`.
-- `nix build .#darwinConfigurations.<hostname>.system --extra-experimental-features 'nix-command flakes'`: Build only.
-- `./result/sw/bin/darwin-rebuild switch --flake .#<hostname>`: Apply the last build.
-- `nix fmt`: Run the configured formatter (Alejandra) on Nix files.
-- Optional sanity checks: `nix flake check` and `darwin-rebuild switch --flake .#<hostname> --dry-run`.
+Use `make deploy` for a full build and switch via `darwin-rebuild`. Run `nix build .#darwinConfigurations.<hostname>.system --extra-experimental-features 'nix-command flakes'` to confirm the system builds without applying it. After a successful build, apply it with `./result/sw/bin/darwin-rebuild switch --flake .#<hostname>`. Optional checks: `nix flake check` to validate the flake and `darwin-rebuild switch --flake .#<hostname> --dry-run` to preview changes.
 
 ## Coding Style & Naming Conventions
-- Nix formatting: use `nix fmt` (Alejandra). 2‑space indent, trailing commas, sorted attrs when practical.
-- Filenames: kebab-case for `.nix` modules (e.g., `homebrew-mirror.nix`).
-- Keep modules focused: system-level in `modules/`, user-level in `home/`.
+Format all Nix files with `nix fmt` (Alejandra). Maintain 2-space indentation, trailing commas, and sorted attributes when practical. Name Nix modules with kebab-case (`homebrew-mirror.nix`). Keep system logic in `modules/` and user-specific configuration in `home/` to avoid cross-contamination.
 
 ## Testing Guidelines
-- Prefer incremental changes; build locally before PRs.
-- Validate evaluation with `nix build` and a `--dry-run` switch when possible.
-- If modifying `home/git.nix`, note it removes `~/.gitconfig` during activation—test on a non-critical user first.
+Before committing, ensure `nix build` succeeds for the relevant host. Run `nix flake check` to catch evaluation issues early. When touching Home Manager modules—especially `home/git.nix`—test on a non-critical account because activation replaces `~/.gitconfig`. Document any manual validation steps when opening a PR.
 
 ## Commit & Pull Request Guidelines
-- Commit style: Conventional Commits seen in history (e.g., `feat: ...`, `fix: ...`, `add:`).
-- Scope explicitly (e.g., `feat(home): add starship preset`).
-- PRs should include: summary, affected files/modules, sample command outputs (build/switch), and any migration notes.
-- Ensure `nix fmt` passes and builds succeed before requesting review.
+Follow Conventional Commits (`feat(home): add starship preset`, `fix(modules): correct brew casks`). For PRs, include a concise summary, list touched modules, and paste key command outputs (`nix build`, dry-run switch). Note any host-specific migrations or post-merge actions so downstream users can apply the change safely.
 
 ## Security & Configuration Tips
-- Avoid committing secrets. Prefer environment variables or separate, ignored files.
-- Verify `hostname`, `username`, `useremail` in `flake.nix` before deploying.
-- Homebrew apps require Homebrew installed; cask changes can affect system apps—document impacts in PRs.
-
+Never commit secrets; prefer environment variables or ignored files. Double-check `hostname`, `username`, and `useremail` in `flake.nix` before deploying. Document the impact of Homebrew changes, since casks can modify system apps, and ensure Homebrew is present on the target machine.
