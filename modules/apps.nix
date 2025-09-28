@@ -21,17 +21,18 @@
     # rar
     gh
     nodejs
-    yarn
+    # yarn
     #nodejs_18
     #(yarn.override { nodejs = nodejs_18; })
     pnpm
     direnv
-    nix-direnv
+    # nix-direnv
     jq
     ripgrep
     just
     fzf
     bat
+    fd
     # vscode
 
     # For Expo
@@ -39,13 +40,12 @@
 
     # For NestJS
     # nodePackages."@nestjs/cli"
-    turbo # Vercel TurboRepo CLI
-    tmux # terminal multiplexer for managing terminal sessions
+    # turbo # Vercel TurboRepo CLI
+    # tmux # terminal multiplexer for managing terminal sessions
     postman
     android-tools
     codex
 
-    fd
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -69,7 +69,7 @@
     # For details, see https://github.com/mas-cli/mas
     masApps = {
       # TODO Feel free to add your favorite apps here.
-      "DevCleaner for Xcode" = 1388020431; # Xcode cache cleaner
+      # "DevCleaner for Xcode" = 1388020431; # Xcode cache cleaner
       "uBlock origin lite" = 6745342698;
 
       # Xcode = 497799835;
@@ -102,15 +102,13 @@
       # "rbenv"
       "openjdk@21"
       # "scrcpy"
-      "cocoapods" # CocoaPods CLI for iOS development
-      "anchordotdev/tap/anchor"
-      "nss"
+      # "cocoapods" # CocoaPods CLI for iOS development
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "xcodes"
+      # "xcodes"
       "firefox"
       # "claude-code"
       "localsend"
@@ -119,10 +117,10 @@
       # "cloudflare-warp"
       # "cursor"
       "mac-mouse-fix"
-      "android-studio"
+      # "android-studio"
       "visual-studio-code"
       # "reactotron"
-      # "ollama"
+      "ollama"
       # "expo-orbit"
       "obsidian"
       # "rar"
