@@ -24,7 +24,8 @@
       {
         # use diffrent email & name for work
         path = "~/work/.gitconfig";
-        condition = "gitdir:~/work/";
+        # condition = "gitdir:~/work/";
+        condition = "gitdir:/Users/ruchirajkarki/work/**";
       }
     ];
 

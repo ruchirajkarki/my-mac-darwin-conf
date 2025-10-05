@@ -33,6 +33,7 @@
     fzf
     bat
     fd
+    docker
     # vscode
 
     # For Expo
@@ -40,7 +41,7 @@
 
     # For NestJS
     # nodePackages."@nestjs/cli"
-    # turbo # Vercel TurboRepo CLI
+    turbo # Vercel TurboRepo CLI
     # tmux # terminal multiplexer for managing terminal sessions
     postman
     android-tools
@@ -120,7 +121,7 @@
       # "android-studio"
       "visual-studio-code"
       # "reactotron"
-      "ollama"
+      "ollama-app"
       # "expo-orbit"
       "obsidian"
       # "rar"
