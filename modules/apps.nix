@@ -33,7 +33,7 @@
     fzf
     bat
     fd
-    docker
+    # docker
     # vscode
 
     # For Expo
