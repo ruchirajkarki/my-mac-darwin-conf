@@ -84,6 +84,11 @@
       export PNPM_HOME="''${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
       export PATH="$PNPM_HOME:$PATH"
 
+      # Install NestJS CLI globally via pnpm if not already installed
+      if command -v pnpm >/dev/null 2>&1 && ! command -v nest >/dev/null 2>&1; then
+        pnpm add -g @nestjs/cli >/dev/null 2>&1 || true
+      fi
+
       # Corepack shims for Yarn/Pnpm pinned by packageManager
       if command -v corepack >/dev/null 2>&1; then
         COREPACK_HOME="''${XDG_DATA_HOME:-$HOME/.local/share}/corepack"

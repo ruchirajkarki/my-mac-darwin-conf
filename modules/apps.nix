@@ -38,9 +38,7 @@
 
     # For Expo
     nodePackages.eas-cli
-
-    # For NestJS
-    # nodePackages."@nestjs/cli"
+    
     turbo # Vercel TurboRepo CLI
     # tmux # terminal multiplexer for managing terminal sessions
     postman
