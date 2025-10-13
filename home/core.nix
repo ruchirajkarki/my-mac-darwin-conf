@@ -106,6 +106,17 @@
         setw -g mode-keys vi
       '';
     };
+
+    vscode = {
+      enable = true;
+      # extensions = with pkgs.vscode-extensions; [
+      #  esbenp.prettier-vscode
+      #  dbaeumer.vscode-eslint
+      #  eamodio.gitlens
+      #  mhutchie.git-graph
+      #  streetsidesoftware.code-spell-checker
+      # ];
+    };
   };
 
   # Link your fork of kickstart.nvim as the Neovim config

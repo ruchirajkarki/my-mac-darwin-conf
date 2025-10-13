@@ -34,7 +34,6 @@
     bat
     fd
     # docker
-    # vscode
 
     # For Expo
     nodePackages.eas-cli
@@ -117,7 +116,6 @@
       # "cursor"
       "mac-mouse-fix"
       # "android-studio"
-      "visual-studio-code"
       # "reactotron"
       "ollama-app"
       # "expo-orbit"
