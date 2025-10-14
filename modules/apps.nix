@@ -99,6 +99,7 @@
       # "skaffold"
       # "rbenv"
       "openjdk@21"
+      "spicetify-cli" # Spotify customizer
       # "scrcpy"
       # "cocoapods" # CocoaPods CLI for iOS development
     ];
@@ -108,6 +109,7 @@
     casks = [
       # "xcodes"
       "firefox"
+      "spotify"
       # "claude-code"
       "localsend"
       "google-chrome"
