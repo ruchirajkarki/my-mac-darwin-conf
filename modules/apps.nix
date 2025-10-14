@@ -119,7 +119,7 @@
       "mac-mouse-fix"
       # "android-studio"
       # "reactotron"
-      "ollama-app"
+      # "ollama-app"
       # "expo-orbit"
       "obsidian"
       # "rar"
