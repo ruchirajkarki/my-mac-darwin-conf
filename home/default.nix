@@ -3,6 +3,7 @@
   imports = [
     ./shell.nix
     ./core.nix
+    ./node.nix
     ./git.nix
     ./starship.nix
     ./fzf-bat.nix

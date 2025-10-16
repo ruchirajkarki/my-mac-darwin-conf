@@ -80,20 +80,9 @@
       export PATH="$PATH:$ANDROID_HOME/tools/bin"
       export PATH="$PATH:$ANDROID_HOME/emulator"
 
-      # PNPM home (works well with Corepack)
-      export PNPM_HOME="''${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
-      export PATH="$PNPM_HOME:$PATH"
-
       # Install NestJS CLI globally via pnpm if not already installed
       if command -v pnpm >/dev/null 2>&1 && ! command -v nest >/dev/null 2>&1; then
         pnpm add -g @nestjs/cli >/dev/null 2>&1 || true
-      fi
-
-      # Corepack shims for Yarn/Pnpm pinned by packageManager
-      if command -v corepack >/dev/null 2>&1; then
-        COREPACK_HOME="''${XDG_DATA_HOME:-$HOME/.local/share}/corepack"
-        export COREPACK_HOME
-        corepack enable --install-directory "$HOME/.local/bin" >/dev/null 2>&1 || true
       fi
 
       # fzf previews and nicer defaults

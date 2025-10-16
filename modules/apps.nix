@@ -24,7 +24,6 @@
     # yarn
     #nodejs_18
     #(yarn.override { nodejs = nodejs_18; })
-    pnpm
     direnv
     # nix-direnv
     jq
@@ -37,13 +36,12 @@
 
     # For Expo
     nodePackages.eas-cli
-    
+
     turbo # Vercel TurboRepo CLI
     # tmux # terminal multiplexer for managing terminal sessions
     postman
     android-tools
     codex
-
   ];
   environment.variables.EDITOR = "nvim";
 
