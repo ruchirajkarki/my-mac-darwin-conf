@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (config.xdg) dataHome;
-  inherit (config.home) homeDirectory;
+  inherit (config.home) homeDirectory profileDirectory;
 
   nodejs = pkgs.nodejs;
   pnpmHome = "${dataHome}/pnpm";
@@ -22,8 +22,9 @@ in {
   };
 
   home.sessionPath = [
-    pnpmHome
+    "${profileDirectory}/bin"
     localBin
+    pnpmHome
   ];
 
   # Ensure Corepack shims are installed once during activation so `pnpm`
