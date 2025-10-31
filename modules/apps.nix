@@ -33,8 +33,6 @@
     bat
     fd
     # docker
-    code-cursor
-    
     spicetify-cli
     # For Expo
     nodePackages.eas-cli
@@ -122,6 +120,7 @@
       # "ollama-app"
       # "expo-orbit"
       "obsidian"
+      "cursor"
       # "rar"
       # "visual-studio-code"
       # "utm"
