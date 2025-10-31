@@ -33,7 +33,9 @@
     bat
     fd
     # docker
-
+    code-cursor
+    
+    spicetify-cli
     # For Expo
     nodePackages.eas-cli
 
@@ -97,7 +99,7 @@
       # "skaffold"
       # "rbenv"
       "openjdk@21"
-      "spicetify-cli" # Spotify customizer
+      # "spicetify-cli" # Spotify customizer
       # "scrcpy"
       # "cocoapods" # CocoaPods CLI for iOS development
     ];
