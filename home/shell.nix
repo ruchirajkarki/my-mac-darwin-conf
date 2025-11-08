@@ -118,15 +118,17 @@
   home.shellAliases = {
     t = "turbo";
     dd = "cd ~/nix-conf && make deploy";
-    pd = "pnpm dev";
-    pi = "pnpm install";
 
-    # Next.js / pnpm dev aliases
-    nd = "pnpm dev";
-    nb = "pnpm build";
-    nl = "pnpm lint";
-    nt = "pnpm test";
-    nxd = "next dev";
+    # pnpm dev aliases
+    pi = "pnpm install";
+    pd = "pnpm dev";
+    pb = "pnpm build";
+    pl = "pnpm lint";
+    pt = "pnpm test";
+
+    lg = "lazygit";
+    gst = "git status";
+    gco = "git checkout";
 
     code_bot = "cd ~/work/istem/dynamic/bot_frontend && code . && turbo dev";
     code_bid = "cd ~/work/istem/dynamic/bid-my-trip && code . && turbo dev";
