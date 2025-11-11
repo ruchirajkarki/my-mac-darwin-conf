@@ -16,10 +16,6 @@
     enable = true;
     lfs.enable = true;
 
-    # TODO replace with your own name & email
-    userName = "ruchirajkarki";
-    userEmail = "ruchirajkarki@gmail.com";
-
     includes = [
       {
         # use diffrent email & name for work
@@ -29,62 +25,58 @@
       }
     ];
 
-    extraConfig = {
+    settings = {
+      # TODO replace with your own name & email
+      user = {
+        name = "ruchirajkarki";
+        email = "ruchirajkarki@gmail.com";
+      };
+
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
+
+      alias = {
+        # common aliases
+        br = "branch";
+        co = "checkout";
+        st = "status";
+        ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+        ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
+        cm = "commit -m";
+        ca = "commit -am";
+        dc = "diff --cached";
+        amend = "commit --amend -m";
+
+        # aliases for submodule
+        update = "submodule update --init --recursive";
+        foreach = "submodule foreach";
+      };
     };
+  };
 
-    # signing = {
-    #   key = "xxx";
-    #   signByDefault = true;
-    # };
-
-    # delta = {
-    #   enable = true;
-    #   options = {
-    #     features = "side-by-side";
-    #   };
-    # };
-    delta = {
+  programs.delta = {
     enable = true;
+    enableGitIntegration = true;
     options = {
       "true-color" = "always";
       "line-numbers" = true;
-      navigate     = true;
-      light        = false;
+      navigate = true;
+      light = false;
 
       interactive = {
         "keep-plus-minus-markers" = false;
       };
 
       decorations = {
-        "commit-decoration-style"        = "blue ol";
-        "commit-style"                   = "raw";
-        "file-style"                     = "omit";
-        "hunk-header-decoration-style"   = "blue box";
-        "hunk-header-file-style"         = "red";
-        "hunk-header-line-number-style"  = "#067a00";
-        "hunk-header-style"              = "file line-number syntax";
+        "commit-decoration-style" = "blue ol";
+        "commit-style" = "raw";
+        "file-style" = "omit";
+        "hunk-header-decoration-style" = "blue box";
+        "hunk-header-file-style" = "red";
+        "hunk-header-line-number-style" = "#067a00";
+        "hunk-header-style" = "file line-number syntax";
       };
-    };
-  };
-
-    aliases = {
-      # common aliases
-      br = "branch";
-      co = "checkout";
-      st = "status";
-      ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
-      ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
-      cm = "commit -m";
-      ca = "commit -am";
-      dc = "diff --cached";
-      amend = "commit --amend -m";
-
-      # aliases for submodule
-      update = "submodule update --init --recursive";
-      foreach = "submodule foreach";
     };
   };
 }
