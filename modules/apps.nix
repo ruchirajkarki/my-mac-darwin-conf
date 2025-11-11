@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   ##########################################################################
   #
   #  Install all apps and packages here.
@@ -21,6 +21,7 @@
     # rar
     gh
     nodejs
+    nil
     # yarn
     #nodejs_18
     #(yarn.override { nodejs = nodejs_18; })
