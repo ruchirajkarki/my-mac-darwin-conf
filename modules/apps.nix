@@ -32,7 +32,9 @@
     fzf
     bat
     fd
+    nixfmt-classic
     # docker
+    # docker-compose
     spicetify-cli
     # For Expo
     nodePackages.eas-cli
@@ -97,6 +99,7 @@
       # "skaffold"
       # "rbenv"
       "openjdk@21"
+      # "container"
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
       # "cocoapods" # CocoaPods CLI for iOS development
@@ -112,6 +115,7 @@
       "localsend"
       "google-chrome"
       "ghostty"
+      "appcleaner"
       # "cloudflare-warp"
       # "cursor"
       "mac-mouse-fix"
@@ -143,6 +147,7 @@
       # "postman"
       # "wireshark" # network analyzer
       # "soulseek"
+      "docker-desktop"
     ];
   };
 }

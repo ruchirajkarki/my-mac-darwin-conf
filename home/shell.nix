@@ -127,14 +127,35 @@
     pt = "pnpm test";
 
     lg = "lazygit";
-    gst = "git status";
-    gco = "git checkout";
-
-    code_bot = "cd ~/work/istem/dynamic/bot_frontend && code . && turbo dev";
-    code_bid = "cd ~/work/istem/dynamic/bid-my-trip && code . && turbo dev";
-    code_land = "cd ~/work/istem/dynamic/landscape_frontend && code . && pnpm dev";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+
+    # Additional development-friendly aliases
+    gs = "git stash";
+    gc = "git checkout";
+    gpl = "git pull";
+    gps = "git push";
+    gcmsg = "git commit -m";
+    gbr = "git branch";
+    gdf = "git diff";
+    gplr = "git pull --rebase";
+    gcm = "git checkout main";
+    gcb = "git checkout -b";
+
+    # Docker aliases
+    dcu = "docker-compose up";
+    dcd = "docker-compose down";
+    dcb = "docker-compose build";
+    dcl = "docker-compose logs";
+
+    # Kubernetes aliases
+    k = "kubectl";
+    kga = "kubectl get all";
+    kgn = "kubectl get nodes";
+    kgp = "kubectl get pods";
+    kgs = "kubectl get services";
+    kd = "kubectl describe";
+    kl = "kubectl logs";
   };
 }

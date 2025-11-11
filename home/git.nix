@@ -40,12 +40,35 @@
     #   signByDefault = true;
     # };
 
+    # delta = {
+    #   enable = true;
+    #   options = {
+    #     features = "side-by-side";
+    #   };
+    # };
     delta = {
-      enable = true;
-      options = {
-        features = "side-by-side";
+    enable = true;
+    options = {
+      "true-color" = "always";
+      "line-numbers" = true;
+      navigate     = true;
+      light        = false;
+
+      interactive = {
+        "keep-plus-minus-markers" = false;
+      };
+
+      decorations = {
+        "commit-decoration-style"        = "blue ol";
+        "commit-style"                   = "raw";
+        "file-style"                     = "omit";
+        "hunk-header-decoration-style"   = "blue box";
+        "hunk-header-file-style"         = "red";
+        "hunk-header-line-number-style"  = "#067a00";
+        "hunk-header-style"              = "file line-number syntax";
       };
     };
+  };
 
     aliases = {
       # common aliases

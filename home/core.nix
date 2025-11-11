@@ -1,6 +1,6 @@
 {
   pkgs,
-  kickstart-nvim,
+  # kickstart-nvim,
   ...
 }: {
   home.packages = with pkgs; [
@@ -122,9 +122,9 @@
   # Link your fork of kickstart.nvim as the Neovim config
   xdg = {
     enable = true;
-    configFile."nvim" = {
-      source = kickstart-nvim;
-      recursive = true;
-    };
+    # configFile."nvim" = {
+    #   source = kickstart-nvim;
+    #   recursive = true;
+    # };
   };
 }
