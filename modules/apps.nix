@@ -43,6 +43,7 @@
     turbo # Vercel TurboRepo CLI
     # tmux # terminal multiplexer for managing terminal sessions
     postman
+    flutter
     android-tools
     codex
   ];
@@ -103,13 +104,13 @@
       # "container"
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
-      # "cocoapods" # CocoaPods CLI for iOS development
+      "cocoapods" # CocoaPods CLI for iOS development
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      # "xcodes"
+      "xcodes"
       "firefox"
       "spotify"
       # "claude-code"
