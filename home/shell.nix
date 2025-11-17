@@ -67,13 +67,9 @@
       }
     ];
     initContent = ''
-      # Homebrew setup and completions (macOS)
+      # Homebrew setup (macOS) - without completions to avoid errors
       if [[ -f /opt/homebrew/bin/brew ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
-        # Only add to fpath if the completions directory exists
-        if [[ -d /opt/homebrew/share/zsh/site-functions ]]; then
-          fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
-        fi
       fi
 
       # General paths
