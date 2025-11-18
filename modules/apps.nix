@@ -43,8 +43,8 @@
     turbo # Vercel TurboRepo CLI
     # tmux # terminal multiplexer for managing terminal sessions
     postman
-    flutter
-    android-tools
+    # flutter
+    # android-tools
     codex
   ];
   environment.variables.EDITOR = "nvim";
@@ -104,7 +104,7 @@
       # "container"
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
-      "cocoapods" # CocoaPods CLI for iOS development
+      # "cocoapods" # CocoaPods CLI for iOS development
     ];
 
     # `brew install --cask`

@@ -1,7 +1,0 @@
-[23:36:09 2025-10-14] FETCHING Version 2.42.0
-[23:36:09 2025-10-14] CREATING /Users/ruchirajkarki/.spicetify
-[23:36:09 2025-10-14] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.42.0/spicetify-2.42.0-darwin-arm64.tar.gz
-[23:36:10 2025-10-14] EXTRACTING /Users/ruchirajkarki/.spicetify/spicetify.tar.gz
-[23:36:11 2025-10-14] SETTING EXECUTABLE PERMISSIONS TO /Users/ruchirajkarki/.spicetify/spicetify
-[23:36:11 2025-10-14] REMOVING /Users/ruchirajkarki/.spicetify/spicetify.tar.gz
-[23:36:11 2025-10-14] APPENDING /Users/ruchirajkarki/.spicetify to PATH in /Users/ruchirajkarki/.config/zsh/.zshrc
