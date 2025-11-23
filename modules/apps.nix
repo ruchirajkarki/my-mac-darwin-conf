@@ -142,11 +142,11 @@
       # "utm"
       # "arc"
       # "sublime-text"
-      # "dbeaver-community"
+      "dbeaver-community"
       # IM & audio & remote desktop & meeting
       # "telegram"
       # "discord"
-      # "brainfm"
+      "brainfm"
 
       # "anki"
       "iina" # video player
