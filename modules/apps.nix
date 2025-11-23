@@ -40,12 +40,14 @@
     # For Expo
     nodePackages.eas-cli
 
+
+
     pkgs-turbo.turbo # Vercel TurboRepo CLI (pinned to working version)
     # tmux # terminal multiplexer for managing terminal sessions
     postman
     # flutter
     # android-tools
-    codex
+    # codex # Outdated in nixpkgs (0.58.0), install via npm: npm install -g codex-cli
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -134,6 +136,7 @@
       # "expo-orbit"
       "obsidian"
       "cursor"
+      "codex" # OpenAI Codex CLI
       # "rar"
       # "visual-studio-code"
       # "utm"
