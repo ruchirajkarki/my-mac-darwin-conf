@@ -105,7 +105,7 @@
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
       # "cocoapods" # CocoaPods CLI for iOS development
-      
+
       ##### FOR DOPPLER ######
       # Prerequisite. gnupg is required for binary signature verification
       "gnupg"
@@ -117,7 +117,7 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      "xcodes"
+      # "xcodes"
       "firefox"
       "spotify"
       # "claude-code"
