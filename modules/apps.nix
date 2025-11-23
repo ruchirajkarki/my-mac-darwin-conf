@@ -105,6 +105,13 @@
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
       # "cocoapods" # CocoaPods CLI for iOS development
+      
+      ##### FOR DOPPLER ######
+      # Prerequisite. gnupg is required for binary signature verification
+      "gnupg"
+      # Next, install using brew (use `doppler update` for subsequent updates)
+      "dopplerhq/cli/doppler"
+      ########################
     ];
 
     # `brew install --cask`
