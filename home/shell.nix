@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   programs.zsh = {
@@ -66,16 +67,17 @@
         file = "share/zsh-autopair/autopair.zsh";
       }
     ];
-    initExtraBeforeCompInit = ''
-      # Homebrew setup (macOS)
-      if [[ -f /opt/homebrew/bin/brew ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      fi
-    '';
     
-    initContent = ''
-      # General paths
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+    initContent = lib.mkMerge [
+      (lib.mkOrder 550 ''
+        # Homebrew setup (macOS) - runs before completion init
+        if [[ -f /opt/homebrew/bin/brew ]]; then
+          eval "$(/opt/homebrew/bin/brew shellenv)"
+        fi
+      '')
+      ''
+        # General paths
+        export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
 
       # Java (Homebrew OpenJDK)
       export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
@@ -119,7 +121,7 @@
       zle -N zle-keymap-select
       zle -N zle-line-init
       bindkey -M viins 'jk' vi-cmd-mode
-    '';
+    ''];
   };
 
   home.shellAliases = {

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-turbo, ... }: {
   ##########################################################################
   #
   #  Install all apps and packages here.
@@ -40,7 +40,7 @@
     # For Expo
     nodePackages.eas-cli
 
-    turbo # Vercel TurboRepo CLI
+    pkgs-turbo.turbo # Vercel TurboRepo CLI (pinned to working version)
     # tmux # terminal multiplexer for managing terminal sessions
     postman
     # flutter

@@ -23,6 +23,9 @@
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
+    # Pinned nixpkgs for turbo (before Rust 2024 build issue)
+    nixpkgs-turbo.url = "github:nixos/nixpkgs/nixos-24.05";
+
     # home-manager, used for managing user configuration
     home-manager = {
       # url = "github:nix-community/home-manager/release-24.05";
@@ -52,7 +55,7 @@
   # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
   # However, `self` is an exception, this special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
-  outputs = inputs@{ self, nixpkgs, darwin, home-manager, nix-homebrew, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-turbo, darwin, home-manager, nix-homebrew, ... }:
     let
       # TODO replace with your own username, email, system, and hostname
       username = "ruchirajkarki";
@@ -60,7 +63,12 @@
       system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
       hostname = "Ruchis-MacBook-Air";
 
-      specialArgs = inputs // { inherit username useremail hostname; };
+      # Get turbo from the pinned nixpkgs version
+      pkgs-turbo = import nixpkgs-turbo {
+        inherit system;
+      };
+
+      specialArgs = inputs // { inherit username useremail hostname pkgs-turbo; };
     in {
       darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
         inherit system specialArgs;
