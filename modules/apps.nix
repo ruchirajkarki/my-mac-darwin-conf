@@ -104,6 +104,8 @@
       # "minikube"
       # "skaffold"
       # "rbenv"
+      "libpq"
+      "shellcheck" # shell script static analysis tool
       "openjdk@21"
       # "container"
       # "spicetify-cli" # Spotify customizer
