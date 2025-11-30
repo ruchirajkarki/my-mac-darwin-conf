@@ -8,6 +8,17 @@
     enable = true;
     enableCompletion = true;
     defaultKeymap = "viins";
+    envExtra = ''
+      # Clean stale Homebrew completions before any global compinit runs
+      if [[ ! -e /opt/homebrew/completions/zsh/_brew ]]; then
+        [[ -L /opt/homebrew/share/zsh/site-functions/_brew ]] && rm -f /opt/homebrew/share/zsh/site-functions/_brew
+        fpath=(''${fpath:#/opt/homebrew/share/zsh/site-functions})
+        zcompdump="''${ZDOTDIR:-$HOME}/.zcompdump"
+        if [[ -e "$zcompdump" ]] && grep -q "/opt/homebrew/share/zsh/site-functions/_brew" "$zcompdump"; then
+          rm -f "$zcompdump" "$zcompdump".zwc
+        fi
+      fi
+    '';
     autosuggestion = {
       enable = true;
     };
@@ -67,7 +78,6 @@
         file = "share/zsh-autopair/autopair.zsh";
       }
     ];
-    
     initContent = lib.mkMerge [
       (lib.mkOrder 550 ''
         # Homebrew setup (macOS) - runs before completion init
@@ -76,52 +86,53 @@
         fi
       '')
       ''
-        # General paths
-        export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+          # General paths
+          export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
 
-      # Java (Homebrew OpenJDK)
-      export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-      export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
+        # Java (Homebrew OpenJDK)
+        export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+        export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
-      # Android SDK
-      export ANDROID_HOME="$HOME/Library/Android/sdk"
-      export PATH="$PATH:$ANDROID_HOME/platform-tools"
-      export PATH="$PATH:$ANDROID_HOME/tools/bin"
-      export PATH="$PATH:$ANDROID_HOME/emulator"
+        # Android SDK
+        export ANDROID_HOME="$HOME/Library/Android/sdk"
+        export PATH="$PATH:$ANDROID_HOME/platform-tools"
+        export PATH="$PATH:$ANDROID_HOME/tools/bin"
+        export PATH="$PATH:$ANDROID_HOME/emulator"
 
-      # Install NestJS CLI globally via pnpm if not already installed
-      if command -v pnpm >/dev/null 2>&1 && ! command -v nest >/dev/null 2>&1; then
-        pnpm add -g @nestjs/cli >/dev/null 2>&1 || true
-      fi
-
-      # fzf previews and nicer defaults
-      export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border"
-      export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always {} | head -500"'
-      export FZF_ALT_C_OPTS='--preview "eza -lah --group-directories-first --icons {} | head -200"'
-
-      # Autosuggestions: async + history strategy; use array-safe assignments
-      typeset -ga ZSH_AUTOSUGGEST_STRATEGY
-      ZSH_AUTOSUGGEST_STRATEGY=(history)
-      typeset -g ZSH_AUTOSUGGEST_USE_ASYNC=1
-      typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
-      if typeset -f autosuggest-accept >/dev/null; then
-        bindkey -M viins '^f' autosuggest-accept
-      fi
-
-      # Vi-mode ergonomics: jk to escape; cursors per mode
-      export KEYTIMEOUT=20
-      function zle-keymap-select {
-        if [[ $KEYMAP == vicmd ]]; then
-          print -n '\e[1 q'   # block cursor
-        else
-          print -n '\e[5 q'   # beam cursor
+        # Install NestJS CLI globally via pnpm if not already installed
+        if command -v pnpm >/dev/null 2>&1 && ! command -v nest >/dev/null 2>&1; then
+          pnpm add -g @nestjs/cli >/dev/null 2>&1 || true
         fi
-      }
-      function zle-line-init { zle -K viins; print -n '\e[5 q'; }
-      zle -N zle-keymap-select
-      zle -N zle-line-init
-      bindkey -M viins 'jk' vi-cmd-mode
-    ''];
+
+        # fzf previews and nicer defaults
+        export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --border"
+        export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always {} | head -500"'
+        export FZF_ALT_C_OPTS='--preview "eza -lah --group-directories-first --icons {} | head -200"'
+
+        # Autosuggestions: async + history strategy; use array-safe assignments
+        typeset -ga ZSH_AUTOSUGGEST_STRATEGY
+        ZSH_AUTOSUGGEST_STRATEGY=(history)
+        typeset -g ZSH_AUTOSUGGEST_USE_ASYNC=1
+        typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
+        if typeset -f autosuggest-accept >/dev/null; then
+          bindkey -M viins '^f' autosuggest-accept
+        fi
+
+        # Vi-mode ergonomics: jk to escape; cursors per mode
+        export KEYTIMEOUT=20
+        function zle-keymap-select {
+          if [[ $KEYMAP == vicmd ]]; then
+            print -n '\e[1 q'   # block cursor
+          else
+            print -n '\e[5 q'   # beam cursor
+          fi
+        }
+        function zle-line-init { zle -K viins; print -n '\e[5 q'; }
+        zle -N zle-keymap-select
+        zle -N zle-line-init
+        bindkey -M viins 'jk' vi-cmd-mode
+      ''
+    ];
   };
 
   home.shellAliases = {

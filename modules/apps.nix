@@ -1,4 +1,8 @@
-{ pkgs, pkgs-turbo, ... }: {
+{
+  pkgs,
+  pkgs-turbo,
+  ...
+}: {
   ##########################################################################
   #
   #  Install all apps and packages here.
@@ -39,8 +43,6 @@
     spicetify-cli
     # For Expo
     nodePackages.eas-cli
-
-
 
     pkgs-turbo.turbo # Vercel TurboRepo CLI (pinned to working version)
     # tmux # terminal multiplexer for managing terminal sessions
