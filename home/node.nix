@@ -13,7 +13,7 @@
   localBin = "${homeDirectory}/.local/bin";
 in {
   home.packages = [
-    nodejs
+    nodejs # JavaScript runtime
   ];
 
   home.sessionVariables = {

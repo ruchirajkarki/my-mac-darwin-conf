@@ -18,32 +18,32 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    neovim
-    git
-    lazygit
+    neovim # modern, highly extensible text editor
+    git # version control system
+    lazygit # terminal-based UI for Git
     # just # use Justfile to simplify nix-darwin's commands
     # rar
-    gh
-    nodejs
-    nil
+    gh # GitHub CLI
+    nodejs # JavaScript runtime
+    nil # Language Server for Nix
     # yarn
     #nodejs_18
     #(yarn.override { nodejs = nodejs_18; })
-    direnv
+    direnv # loads environment variables per directory
     # nix-direnv
-    jq
-    ripgrep
-    just
-    fzf
-    bat
-    fd
-    nixfmt-classic
-    gemini-cli
+    jq # command-line JSON processor
+    ripgrep # fast search tool
+    just # command runner
+    fzf # command-line fuzzy finder
+    bat # cat clone with syntax highlighting
+    fd # find alternative
+    nixfmt-classic # formatter for Nix files
+    gemini-cli # Gemini CLI
     # docker
     # docker-compose
-    spicetify-cli
+    spicetify-cli # command-line tool to customize Spotify
     # For Expo
-    nodePackages.eas-cli
+    nodePackages.eas-cli # command-line tool for Expo Application Services
 
     pkgs-turbo.turbo # Vercel TurboRepo CLI (pinned to working version)
     # tmux # terminal multiplexer for managing terminal sessions
@@ -75,7 +75,7 @@
     masApps = {
       # TODO Feel free to add your favorite apps here.
       # "DevCleaner for Xcode" = 1388020431; # Xcode cache cleaner
-      "uBlock origin lite" = 6745342698;
+      "uBlock origin lite" = 6745342698; # content blocker
 
       # Xcode = 497799835;
       # Wechat = 836500024;
@@ -93,12 +93,12 @@
     # `brew install`
     # TODO Feel free to add your favorite apps here.
     brews = [
-      "wget" # download tool
-      "curl" # no not install curl via nixpkgs, it's not working well on macOS!
-      "biome"
+      "wget" # tool for downloading files
+      "curl" # tool for transferring data with URLs
+      "biome" # toolchain for web development
       # "aria2" # download tool
       # "httpie" # http client
-      "cloudflared"
+      "cloudflared" # command-line tool for Cloudflare Tunnel
       # "mariadb"
       # "php"
       # "composer"
@@ -107,9 +107,9 @@
       # "minikube"
       # "skaffold"
       # "rbenv"
-      "libpq"
+      "libpq" # C application programmer's interface to PostgreSQL
       "shellcheck" # shell script static analysis tool
-      "openjdk@21"
+      "openjdk@21" # Java Development Kit
       # "container"
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
@@ -117,9 +117,9 @@
 
       ##### FOR DOPPLER ######
       # Prerequisite. gnupg is required for binary signature verification
-      "gnupg"
+      "gnupg" # tool for secure communication
       # Next, install using brew (use `doppler update` for subsequent updates)
-      "dopplerhq/cli/doppler"
+      "dopplerhq/cli/doppler" # command-line interface for the Doppler platform
       ########################
     ];
 
@@ -127,39 +127,39 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       # "xcodes"
-      "firefox"
-      "spotify"
+      "firefox" # web browser
+      "spotify" # music streaming service
       # "claude-code"
-      "localsend"
-      "google-chrome"
-      "ghostty"
-      "appcleaner"
-      "pearcleaner"
+      "localsend" # sharing files between devices on a local network
+      "google-chrome" # web browser
+      "ghostty" # fast, feature-rich, and cross-platform terminal emulator
+      "appcleaner" # utility to thoroughly uninstall applications on macOS
+      "pearcleaner" # likely a cleaning utility for macOS
       # "cloudflare-warp"
       # "cursor"
-      "mac-mouse-fix"
+      "mac-mouse-fix" # likely a utility for customizing or fixing mouse behavior on macOS
       # "android-studio"
       # "reactotron"
       # "ollama-app"
       # "expo-orbit"
-      "obsidian"
-      "cursor"
+      "obsidian" # markdown-based knowledge base and note-taking application
+      "cursor" # AI-first code editor
       "codex" # OpenAI Codex CLI
       # "rar"
       # "visual-studio-code"
       # "utm"
       # "arc"
       # "sublime-text"
-      "dbeaver-community"
+      "dbeaver-community" # free multi-platform database tool
       # IM & audio & remote desktop & meeting
       # "telegram"
       # "discord"
-      "brainfm"
+      "brainfm" # service that provides functional music to improve focus, relaxation, and sleep
 
       # "anki"
-      "iina" # video player
+      "iina" # modern media player for macOS
       "raycast" # (HotKey: alt/option + space)search, caculate and run scripts(with many plugins)
-      "stats" # beautiful system monitor
+      "stats" # free, open-source macOS app that monitors various system statistics
       # "eudic" # 欧路词典
 
       # Development
@@ -167,7 +167,7 @@
       # "postman"
       # "wireshark" # network analyzer
       # "soulseek"
-      "docker-desktop"
+      "docker-desktop" # desktop application for running Docker
       "visual-studio-code" # signed build; nix package fails codesign on macOS
     ];
   };

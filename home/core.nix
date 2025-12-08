@@ -5,10 +5,10 @@
 }: {
   home.packages = with pkgs; [
     # archives
-    zip
-    xz
-    unzip
-    p7zip
+    zip # compression utility
+    xz # compression utility
+    unzip # decompression utility
+    p7zip # compression utility for 7-Zip archives
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
@@ -21,16 +21,16 @@
     nmap # A utility for network discovery and security auditing
 
     # misc
-    cowsay
-    file
-    which
-    tree
-    gnused
-    gnutar
-    gawk
-    zstd
-    caddy
-    gnupg
+    cowsay # displays ASCII cows with a message
+    file # determines file type
+    which # locates a command
+    tree # lists directory contents in a tree-like format
+    gnused # GNU stream editor
+    gnutar # GNU version of the tar archiving utility
+    gawk # GNU implementation of AWK
+    zstd # fast lossless compression algorithm
+    caddy # powerful, enterprise-ready open source web server
+    gnupg # tool for secure communication
     # productivity
     glow # markdown previewer in terminal
     zoxide # fast directory jumper
@@ -39,9 +39,9 @@
     tmux
 
     # Next.js dev helpers
-    watchman
-    nodePackages.eslint_d
-    mkcert
+    watchman # file watching service developed by Facebook
+    nodePackages.eslint_d # daemon version of ESLint for faster linting
+    mkcert # simple tool for creating locally trusted development certificates
   ];
 
   programs = {

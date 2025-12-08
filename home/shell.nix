@@ -20,10 +20,10 @@
       fi
     '';
     autosuggestion = {
-      enable = true;
+      enable = true; # enables command autosuggestions
     };
     syntaxHighlighting = {
-      enable = true;
+      enable = true; # enables syntax highlighting for the shell
     };
     "oh-my-zsh" = {
       enable = false;
@@ -63,17 +63,17 @@
     # Lightweight plugins (non-OMZ)
     plugins = [
       {
-        name = "fzf-tab";
+        name = "fzf-tab"; # integrates fzf with Zsh's tab completion
         src = pkgs.zsh-fzf-tab;
         file = "share/fzf-tab/fzf-tab.plugin.zsh";
       }
       {
-        name = "zsh-vi-mode";
+        name = "zsh-vi-mode"; # enables vi-like keybindings in Zsh
         src = pkgs.zsh-vi-mode;
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
       {
-        name = "zsh-autopair";
+        name = "zsh-autopair"; # automatically inserts and deletes matching pairs of delimiters
         src = pkgs.zsh-autopair;
         file = "share/zsh-autopair/autopair.zsh";
       }
