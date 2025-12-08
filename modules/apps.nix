@@ -38,6 +38,7 @@
     bat
     fd
     nixfmt-classic
+    gemini-cli
     # docker
     # docker-compose
     spicetify-cli
@@ -46,7 +47,7 @@
 
     pkgs-turbo.turbo # Vercel TurboRepo CLI (pinned to working version)
     # tmux # terminal multiplexer for managing terminal sessions
-    postman
+    # postman
     # flutter
     # android-tools
     # codex # Outdated in nixpkgs (0.58.0), install via npm: npm install -g codex-cli
