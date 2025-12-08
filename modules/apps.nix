@@ -94,8 +94,10 @@
     brews = [
       "wget" # download tool
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
+      "biome"
       # "aria2" # download tool
       # "httpie" # http client
+      "cloudflared"
       # "mariadb"
       # "php"
       # "composer"
@@ -131,6 +133,7 @@
       "google-chrome"
       "ghostty"
       "appcleaner"
+      "pearcleaner"
       # "cloudflare-warp"
       # "cursor"
       "mac-mouse-fix"
@@ -164,6 +167,7 @@
       # "wireshark" # network analyzer
       # "soulseek"
       "docker-desktop"
+      "visual-studio-code" # signed build; nix package fails codesign on macOS
     ];
   };
 }
