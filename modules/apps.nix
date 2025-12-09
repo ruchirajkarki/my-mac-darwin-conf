@@ -51,8 +51,6 @@
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
     enable = true;
-    user = config.username;
-    autoMigrate = true;
 
     onActivation = {
       autoUpdate = true; # Fetch the newest stable branch of Homebrew's git repo

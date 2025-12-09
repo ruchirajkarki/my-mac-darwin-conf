@@ -47,7 +47,7 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
-    config.url = "./modules/config.nix";
+
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -62,34 +62,52 @@
     darwin,
         home-manager,
         nix-homebrew,
-        config,
         ...
       }: let
+        # Import main configuration
+        config = import ./modules/config.nix;
+
+        # Get the standard pkgs for the system
+        pkgs = import nixpkgs {
+          system = config.system;
+        };
+    
         # Get turbo from the pinned nixpkgs version
         pkgs-turbo = import nixpkgs-turbo {
-          inherit config.system;
+          system = config.system;
         };
     
         specialArgs = inputs // config // {inherit pkgs-turbo;};
       in {
         darwinConfigurations."${config.hostname}" = darwin.lib.darwinSystem {
-          inherit config.system specialArgs;
+          system = config.system;
+          inherit specialArgs;
           modules = [
-            ./modules/nix-core.nix
-        ./modules/system-core.nix # Core system configuration
-        ./modules/macos-preferences.nix # macOS defaults and user preferences
-        ./modules/apps.nix
+            (import ./modules/nix-core.nix { inherit pkgs config; lib = nixpkgs.lib; })
+        (import ./modules/system-core.nix { inherit pkgs config; }) # Core system configuration
+        (import ./modules/macos-preferences.nix { inherit config; }) # macOS defaults and user preferences
+        (import ./modules/apps.nix { inherit pkgs pkgs-turbo config; })
         ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/host-users.nix
+        (import ./modules/host-users.nix { inherit pkgs config; hostname = config.hostname; username = config.username; })
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            user = config.username;
+            autoMigrate = true;
+          };
+        }
+
 
 
         # home manager
         home-manager.darwinModules.home-manager
-        ./modules/home-manager-config.nix # new home-manager configuration
+        (import ./modules/home-manager-config.nix { inherit config pkgs home-manager specialArgs; lib = nixpkgs.lib; }) # new home-manager configuration
       ];
     };
 
     # nix code formatter
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter.${config.system} = nixpkgs.legacyPackages.${config.system}.alejandra;
   };
 }
