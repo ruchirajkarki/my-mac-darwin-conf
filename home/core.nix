@@ -30,7 +30,6 @@
     gawk # GNU implementation of AWK
     zstd # fast lossless compression algorithm
     caddy # powerful, enterprise-ready open source web server
-    gnupg # tool for secure communication
     # productivity
     glow # markdown previewer in terminal
     zoxide # fast directory jumper
@@ -105,6 +104,18 @@
         bind r source-file ~/.tmux.conf \; display-message "Config reloaded!"
         setw -g mode-keys vi
       '';
+    };
+
+    programs.fzf = { # enables and configures fzf (fuzzy finder)
+      enable = true;
+      enableZshIntegration = true;
+      defaultCommand = "fd --type f --hidden --follow --exclude .git";
+      defaultOptions = ["--height=40%" "--layout=reverse" "--border"];
+      fileWidgetCommand = "fd --type f --hidden --follow --exclude .git";
+      changeDirWidgetCommand = "fd --type d --hidden --follow --exclude .git";
+    };
+    programs.bat = { # enables bat (cat clone with syntax highlighting)
+      enable = true;
     };
 
     # vscode = {

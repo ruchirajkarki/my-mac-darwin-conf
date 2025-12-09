@@ -1,22 +1,9 @@
-{pkgs, ...}:
-###################################################################################
-#
-#  macOS's System configuration
-#
-#  All the configuration options are documented here:
-#    https://daiderd.com/nix-darwin/manual/index.html#sec-options
-#  Incomplete list of macOS `defaults` commands :
-#    https://github.com/yannbertrand/macos-defaults
-#
-###################################################################################
+{ config, ... }:
+
 {
-  system.primaryUser = "ruchirajkarki";
+  # macOS Defaults and Custom User Preferences
   system = {
-    stateVersion = 5;
-
     defaults = {
-      # menuExtraClock.Show24Hour = true;  # show 24 hour clock
-
       # customize dock
       dock = {
         autohide = true;
@@ -138,65 +125,5 @@
         SHOWFULLNAME = true; # show full name in login window
       };
     };
-
-    # keyboard settings is not very useful on macOS
-    # the most important thing is to remap option key to alt key globally,
-    # but it's not supported by macOS yet.
-    keyboard = {
-      enableKeyMapping = true; # enable key mapping so that we can use `option` as `control`
-
-      # NOTE: do NOT support remap capslock to both control and escape at the same time
-      remapCapsLockToControl = false; # remap caps lock to control, useful for emac users
-      remapCapsLockToEscape = true; # remap caps lock to escape, useful for vim users
-
-      # swap left command and left alt
-      # so it matches common keyboard layout: `ctrl | command | alt`
-      #
-      # disabled, caused only problems!
-      swapLeftCommandAndLeftAlt = false;
-    };
-  };
-
-  # Add ability to used TouchID for sudo authentication
-  security.pam.services.sudo_local.touchIdAuth = true;
-
-  # Create /etc/zshrc that loads the nix-darwin environment.
-  # this is required if you want to use darwin's default shell - zsh
-  programs.zsh.enable = true;
-  environment.shells = [
-    pkgs.zsh
-  ];
-
-  # Disbale because i use determinate
-  nix.enable = false;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Kathmandu";
-
-  # Fonts
-  fonts = {
-    packages = with pkgs; [
-      # icon fonts
-      material-design-icons
-      font-awesome
-
-      nerd-fonts.fira-code
-      nerd-fonts.symbols-only
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.iosevka
-
-      # nerdfonts
-      # # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
-      # (nerdfonts.override {
-      #   fonts = [
-      #     # symbols icon only
-      #     "NerdFontsSymbolsOnly"
-      #     # Characters
-      #     "FiraCode"
-      #     "JetBrainsMono"
-      #     "Iosevka"
-      #   ];
-      # })
-    ];
   };
 }

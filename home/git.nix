@@ -28,8 +28,8 @@
     settings = {
       # TODO replace with your own name & email
       user = {
-        name = "ruchirajkarki";
-        email = "ruchirajkarki@gmail.com";
+        name = username;
+        email = useremail;
       };
 
       init.defaultBranch = "main";

@@ -6,7 +6,7 @@
     ./node.nix
     ./git.nix
     ./starship.nix
-    ./fzf-bat.nix
+    ./paths.nix
   ];
 
   # Home Manager needs a bit of information about you and the

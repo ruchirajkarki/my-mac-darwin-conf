@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-turbo,
+  config,
   ...
 }: {
   ##########################################################################
@@ -18,24 +19,14 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    neovim # modern, highly extensible text editor
-    git # version control system
-    lazygit # terminal-based UI for Git
-    # just # use Justfile to simplify nix-darwin's commands
-    # rar
+    # Packages handled by Home Manager: neovim, git, lazygit, nodejs, direnv, jq, ripgrep, fzf, bat
     gh # GitHub CLI
-    nodejs # JavaScript runtime
     nil # Language Server for Nix
     # yarn
     #nodejs_18
     #(yarn.override { nodejs = nodejs_18; })
-    direnv # loads environment variables per directory
     # nix-direnv
-    jq # command-line JSON processor
-    ripgrep # fast search tool
     just # command runner
-    fzf # command-line fuzzy finder
-    bat # cat clone with syntax highlighting
     fd # find alternative
     nixfmt-classic # formatter for Nix files
     gemini-cli # Gemini CLI
@@ -60,6 +51,8 @@
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
     enable = true;
+    user = config.username;
+    autoMigrate = true;
 
     onActivation = {
       autoUpdate = true; # Fetch the newest stable branch of Homebrew's git repo
