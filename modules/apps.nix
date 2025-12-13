@@ -121,6 +121,7 @@
       # Next, install using brew (use `doppler update` for subsequent updates)
       "dopplerhq/cli/doppler" # command-line interface for the Doppler platform
       ########################
+      "git-extras"
     ];
 
     # `brew install --cask`
