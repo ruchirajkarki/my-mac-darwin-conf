@@ -162,6 +162,7 @@
       "raycast" # (HotKey: alt/option + space)search, caculate and run scripts(with many plugins)
       "stats" # free, open-source macOS app that monitors various system statistics
       # "eudic" # 欧路词典
+      "tower"
 
       # Development
       # "insomnia" # REST client
@@ -169,7 +170,7 @@
       # "wireshark" # network analyzer
       # "soulseek"
       "docker-desktop" # desktop application for running Docker
-      "visual-studio-code" # signed build; nix package fails codesign on macOS
+      "visual-studio-code@insiders" # insiders build; signed build; nix package fails codesign on macOS
     ];
   };
 }
