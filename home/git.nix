@@ -12,7 +12,8 @@
     rm -f ~/.gitconfig
   '';
 
-  programs.git = { # enables and configures Git
+  programs.git = {
+    # enables and configures Git
     enable = true;
     lfs.enable = true;
 
@@ -55,7 +56,8 @@
     };
   };
 
-  programs.delta = { # command-line utility to get a better-looking diff output for Git
+  programs.delta = {
+    # command-line utility to get a better-looking diff output for Git
     enable = true;
     enableGitIntegration = true;
     options = {

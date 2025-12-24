@@ -1,5 +1,6 @@
 {...}: {
-  programs.starship = { # enables and configures Starship, a cross-shell prompt
+  programs.starship = {
+    # enables and configures Starship, a cross-shell prompt
     enable = true;
 
     enableBashIntegration = true;

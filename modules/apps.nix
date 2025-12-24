@@ -86,6 +86,7 @@
     };
 
     taps = [
+      "hashicorp/tap"
       # "homebrew/services"
     ];
 
@@ -122,13 +123,14 @@
       "dopplerhq/cli/doppler" # command-line interface for the Doppler platform
       ########################
       "git-extras"
+      "hashicorp/tap/vault" # HashiCorp Vault CLI
     ];
 
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
       "openmtp" # Android file transfer app for macOS
-      
+
       # "xcodes"
       "firefox" # web browser
       "spotify" # music streaming service
