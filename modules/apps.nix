@@ -41,7 +41,6 @@
     gemini-cli # Gemini CLI
     # docker
     # docker-compose
-    spicetify-cli # command-line tool to customize Spotify
     # For Expo
     nodePackages.eas-cli # command-line tool for Expo Application Services
 
@@ -110,6 +109,7 @@
       "libpq" # C application programmer's interface to PostgreSQL
       "shellcheck" # shell script static analysis tool
       "openjdk@21" # Java Development Kit
+      "spicetify-cli" # command-line tool to customize Spotify
       # "container"
       # "spicetify-cli" # Spotify customizer
       # "scrcpy"
@@ -127,6 +127,8 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      "openmtp" # Android file transfer app for macOS
+      
       # "xcodes"
       "firefox" # web browser
       "spotify" # music streaming service
