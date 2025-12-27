@@ -163,7 +163,14 @@
     gdf = "git diff";
     gplr = "git pull --rebase";
     gcm = "git checkout main";
+    gcd = "git checkout dev";
+    gct = "git checkout testing";
+    gcs = "git checkout staging";
     gcb = "git checkout -b";
+
+    # Github CLI aliases
+    pr-create = "gh pr create --fill-verbose --editor --base";
+    pr-merge = "gh pr merge --squash --delete-branch";
 
     # Docker aliases
     dcu = "docker-compose up";
